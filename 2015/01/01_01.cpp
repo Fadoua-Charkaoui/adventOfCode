@@ -11,7 +11,17 @@ int main(){
 
     int floor = 0;
 
-    
+    for(int idx = 0 ; idx < line.size() ; ++idx ){
+        if ( line[idx] == '('){
+            floor++;
+        }
+        else
+        {
+            floor--;
+        }
+        
+
+    }
 
     std::cout << "floor in file is : " << floor << std::endl;
     return 0;

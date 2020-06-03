@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <algorithm>
 
 int main(){
 
@@ -10,7 +11,7 @@ int main(){
     infile  >> line ;
 
     int floor = 0;
-
+/*
     for(int idx = 0 ; idx < line.size() ; ++idx ){
         if ( line[idx] == '('){
             floor++;
@@ -22,7 +23,12 @@ int main(){
         
 
     }
+*/
 
+    floor = 
+        std::count(line.begin(), line.end(), '(') - 
+        std::count(line.begin(), line.end(), ')') ;
+        
     std::cout << "floor in file is : " << floor << std::endl;
     return 0;
 }

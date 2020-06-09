@@ -11,10 +11,12 @@ int main(){
     //First part:
     int increment;
     int Freq = 0;
+    std::vector<int> incs;
 
     while(infile >> increment) {
        // std::cout << increment << std::endl;
        Freq += increment;
+       incs.push_back(increment);
     }
     std::cout << Freq << std::endl;
 
@@ -26,10 +28,9 @@ int main(){
     Freqs.push_back(Freq);
 
     while (!Duplicate_found){
-        infile.seekg(0);
-        while(infile >> increment) {
+        for (int increment : incs){
             Freq += increment;
-            if(std::count(Freqs.begin(), Freqs.end(), Freq)){
+            if(std::count(Freqs.begin(), Freqs.end(), Freq) == 0){
                 Freqs.push_back(Freq);
             }
             else {

@@ -2,22 +2,22 @@ f = open("input.txt", "r")
 
 lines = f.readlines()
 
-#First part:
+# First part:
 Freq = 0
 
 for line in lines:
     Freq += int(line.strip())
-    #print(line.strip())
-    
+    # print(line.strip())
+
 print(Freq)
 
-#Second part:
+# Second part:
 Freq = 0
 Duplicate_found = False
 Freqs = list()
 Freqs.append(Freq)
 
-while not Duplicate_found :
+while not Duplicate_found:
 
     for line in lines:
         Freq += int(line.strip())
@@ -25,6 +25,5 @@ while not Duplicate_found :
             Freqs.append(Freq)
         else:
             print(Freq)
-            Duplicate_found = True 
+            Duplicate_found = True
             break
-   

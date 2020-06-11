@@ -4,7 +4,8 @@
 #include <vector>
 #include <algorithm>
 
-int main(){
+int main()
+{
 
     std::ifstream infile("input.txt");
 
@@ -13,13 +14,13 @@ int main(){
     int Freq = 0;
     std::vector<int> incs;
 
-    while(infile >> increment) {
-       // std::cout << increment << std::endl;
-       Freq += increment;
-       incs.push_back(increment);
+    while (infile >> increment)
+    {
+        // std::cout << increment << std::endl;
+        Freq += increment;
+        incs.push_back(increment);
     }
     std::cout << Freq << std::endl;
-
 
     //Second part:
     Freq = 0;
@@ -27,13 +28,17 @@ int main(){
     std::vector<int> Freqs;
     Freqs.push_back(Freq);
 
-    while (!Duplicate_found){
-        for (int increment : incs){
+    while (!Duplicate_found)
+    {
+        for (int increment : incs)
+        {
             Freq += increment;
-            if(std::count(Freqs.begin(), Freqs.end(), Freq) == 0){
+            if (std::count(Freqs.begin(), Freqs.end(), Freq) == 0)
+            {
                 Freqs.push_back(Freq);
             }
-            else {
+            else
+            {
                 std::cout << Freq << std::endl;
                 Duplicate_found = true;
                 break;

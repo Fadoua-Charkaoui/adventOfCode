@@ -31,6 +31,6 @@ int main()
 
     std::cout << fuel_simple_req << std::endl;
     std::cout << fuel_complex_req << std::endl;
-    
+
     return 0;
 }
